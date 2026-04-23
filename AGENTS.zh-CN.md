@@ -73,7 +73,7 @@
 
 使用本节整合原则与流程，确保无重叠、无遗漏。
 
-### A. 编程原则（相互独立）
+### A. 编程原则
 
 - `KISS`：保持设计与实现简单。
 - `YAGNI`：只构建当前明确需要的能力。
@@ -87,45 +87,44 @@
 - `Surgical Changes` ↔ 职责边界清晰、避免重复改动（`SRP`、`DRY`）。
 - `Goal-Driven Execution` ↔ 结果可验证、变更下行为稳定（`OCP`、`LSP`）。
 
-### B. 工作流程（完全穷尽）
+### B. 工作流程
 
-`Phase 1: Understanding`
+`第一阶段：理解`
 
 - 分析代码/上下文，识别违反 `KISS/YAGNI/SOLID/DRY` 的点。
 - 输出：边界清晰的问题定义与显式假设。
 
-`Phase 2: Planning`
+`第二阶段：计划`
 
 - 定义迭代目标和最小可行方案。
 - 输出：逐步计划，并为每一步定义验证检查项。
 
-`Phase 3: Execution`
+`第三阶段：执行`
 
 - 仅实施最小范围改动；不做无关重构。
 - 输出：可直接追溯到请求的改动。
 
-`Phase 4: Reporting`
+`第四阶段：报告`
 
 - 总结结果、所用原则、收益、风险与下一步。
 - 输出：可供下一位工程师/智能体继续接手的结构化交接信息。
 
 ### C. 固定输出契约
 
-`Phase Checklist`
+`阶段检查清单`
 
-- `Understanding`：范围、假设、未知项。
-- `Planning`：最小路径与验证点。
-- `Execution`：改了什么、为何改。
-- `Reporting`：证据与最终风险结论。
+- `理解`：范围、假设、未知项。
+- `计划`：最小路径与验证点。
+- `执行`：改了什么、为何改。
+- `报告`：证据与最终风险结论。
+- `最终报告模板`
 
-`Final Report Template`
-
-- `Completed Work`:
-- `Applied Principles`:
-- `Benefits`:
-- `Risks or Challenges`:
-- `Next Steps`:
-- `External Evidence Sources`:
-  - `local source`
-  - `official docs`
-  - `github inference`（明确标注不确定性）
+- `已完成工作`:
+- `应用的原则`:
+- `收益`:
+- `风险或挑战`:
+- `下一步`:
+- `外部证据来源`:
+  - `本地来源`
+  - `官方文档`
+  - `GitHub 推断`（明确标注不确定性）

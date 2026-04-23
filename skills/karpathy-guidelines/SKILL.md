@@ -75,7 +75,7 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 Use this section to integrate principles and workflow with no overlap and no gaps.
 
-### A. Programming Principles (Mutually Exclusive)
+### A. Programming Principles
 
 - `KISS`: Keep design and implementation simple.
 - `YAGNI`: Build only what is explicitly needed now.
@@ -89,7 +89,7 @@ Mapping to the four core principles:
 - `Surgical Changes` ↔ responsibility boundaries and no repeated edits (`SRP`, `DRY`).
 - `Goal-Driven Execution` ↔ verifiable outcomes and stable behavior under change (`OCP`, `LSP`).
 
-### B. Workflow (Collectively Exhaustive)
+### B. Workflow
 
 `Phase 1: Understanding`
 
