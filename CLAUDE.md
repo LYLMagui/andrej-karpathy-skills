@@ -80,52 +80,42 @@ Use this section to integrate principles and workflow with no overlap and no gap
 - `SOLID`: Apply SRP / OCP / LSP / ISP / DIP to keep changes maintainable.
 - `DRY`: Eliminate duplicated logic and repeated patterns.
 
-Mapping to the four core principles:
 
-- `Think Before Coding` ↔ assumption/tradeoff clarity (`KISS`, `YAGNI`).
-- `Simplicity First` ↔ minimal solution design (`KISS`, `YAGNI`).
-- `Surgical Changes` ↔ responsibility boundaries and no repeated edits (`SRP`, `DRY`).
-- `Goal-Driven Execution` ↔ verifiable outcomes and stable behavior under change (`OCP`, `LSP`).
 
 ### B. Workflow
 
 `Phase 1: Understanding`
-
-- Analyze code/context and identify violations against `KISS/YAGNI/SOLID/DRY`.
-- Output: bounded problem statement and explicit assumptions.
+- Analyze context and identify KISS/YAGNI/SOLID/DRY violations.
+- Output: Problem statement and explicit assumptions.
 
 `Phase 2: Planning`
-
-- Define iteration goal and the smallest viable approach.
-- Output: step-by-step plan with a verification check for each step.
+- Define goal and smallest viable approach.
+- Output: Step-by-step plan with verification points.
 
 `Phase 3: Execution`
-
 - Apply minimum-scope changes only; no unrelated refactors.
-- Output: edits that are directly traceable to the request.
+- Output: Traceable edits.
 
-`Phase 4: Reporting`
+`Phase 4: Verification`
+- Run tests or perform manual checks to ensure goal achievement.
+- Output: Evidence of verification.
 
-- Summarize outcomes, principles used, benefits, risks, and next steps.
-- Output: structured handoff that another engineer/agent can continue from.
+`Phase 5: Reporting`
+- Summarize outcomes, benefits, and risks.
+- Output: Structured handoff information.
 
 ### C. Fixed Output Contract
 
 `Phase Checklist`
-
 - `Understanding`: scope, assumptions, unknowns.
-- `Planning`: minimal path and verification points.
-- `Execution`: what changed and why.
-- `Reporting`: evidence and final risk statement.
+- `Planning`: path and verification points.
+- `Execution`: change description.
+- `Verification`: evidence of success.
+- `Reporting`: conclusion and risks.
 
 `Final Report Template`
+- `Conclusion`: 
+- `Assumptions`: 
+- `Implementation Details`: 
+- `Risks`: 
 
-- `Completed Work`:
-- `Applied Principles`:
-- `Benefits`:
-- `Risks or Challenges`:
-- `Next Steps`:
-- `External Evidence Sources`:
-  - `local source`
-  - `official docs`
-  - `github inference` (mark uncertainty explicitly)
