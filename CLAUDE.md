@@ -9,6 +9,7 @@ Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-s
 **Don't assume. Don't hide confusion. Surface tradeoffs.**
 
 Before implementing:
+
 - State your assumptions explicitly. If uncertain, ask.
 - If multiple interpretations exist, present them - don't pick silently.
 - If a simpler approach exists, say so. Push back when warranted.
@@ -31,12 +32,14 @@ Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, sim
 **Touch only what you must. Clean up only your own mess.**
 
 When editing existing code:
+
 - Don't "improve" adjacent code, comments, or formatting.
 - Don't refactor things that aren't broken.
 - Match existing style, even if you'd do it differently.
 - If you notice unrelated dead code, mention it - don't delete it.
 
 When your changes create orphans:
+
 - Remove imports/variables/functions that YOUR changes made unused.
 - Don't remove pre-existing dead code unless asked.
 
@@ -47,11 +50,13 @@ The test: Every changed line should trace directly to the user's request.
 **Define success criteria. Loop until verified.**
 
 Transform tasks into verifiable goals:
+
 - "Add validation" → "Write tests for invalid inputs, then make them pass"
 - "Fix the bug" → "Write a test that reproduces it, then make it pass"
 - "Refactor X" → "Ensure tests pass before and after"
 
 For multi-step tasks, state a brief plan:
+
 ```
 1. [Step] → verify: [check]
 2. [Step] → verify: [check]
@@ -63,3 +68,64 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 ---
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
+
+## 5. Programming Principles and Workflow
+
+Use this section to integrate principles and workflow with no overlap and no gaps.
+
+### A. Programming Principles (Mutually Exclusive)
+
+- `KISS`: Keep design and implementation simple.
+- `YAGNI`: Build only what is explicitly needed now.
+- `SOLID`: Apply SRP / OCP / LSP / ISP / DIP to keep changes maintainable.
+- `DRY`: Eliminate duplicated logic and repeated patterns.
+
+Mapping to the four core principles:
+
+- `Think Before Coding` ↔ assumption/tradeoff clarity (`KISS`, `YAGNI`).
+- `Simplicity First` ↔ minimal solution design (`KISS`, `YAGNI`).
+- `Surgical Changes` ↔ responsibility boundaries and no repeated edits (`SRP`, `DRY`).
+- `Goal-Driven Execution` ↔ verifiable outcomes and stable behavior under change (`OCP`, `LSP`).
+
+### B. Workflow (Collectively Exhaustive)
+
+`Phase 1: Understanding`
+
+- Analyze code/context and identify violations against `KISS/YAGNI/SOLID/DRY`.
+- Output: bounded problem statement and explicit assumptions.
+
+`Phase 2: Planning`
+
+- Define iteration goal and the smallest viable approach.
+- Output: step-by-step plan with a verification check for each step.
+
+`Phase 3: Execution`
+
+- Apply minimum-scope changes only; no unrelated refactors.
+- Output: edits that are directly traceable to the request.
+
+`Phase 4: Reporting`
+
+- Summarize outcomes, principles used, benefits, risks, and next steps.
+- Output: structured handoff that another engineer/agent can continue from.
+
+### C. Fixed Output Contract
+
+`Phase Checklist`
+
+- `Understanding`: scope, assumptions, unknowns.
+- `Planning`: minimal path and verification points.
+- `Execution`: what changed and why.
+- `Reporting`: evidence and final risk statement.
+
+`Final Report Template`
+
+- `Completed Work`:
+- `Applied Principles`:
+- `Benefits`:
+- `Risks or Challenges`:
+- `Next Steps`:
+- `External Evidence Sources`:
+  - `local source`
+  - `official docs`
+  - `github inference` (mark uncertainty explicitly)
